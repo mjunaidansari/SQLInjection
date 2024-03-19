@@ -19,8 +19,14 @@ const App = () => {
 
 	axios
 		.post('http://localhost:3001/api/login', credentials)
-		.then(response => console.log('Response: ', response.data))
-		.catch(error => console.log(error))
+		.then(response => {
+			console.log('Response: ', response.data)
+			alert(JSON.stringify(response.data))
+		})
+		.catch(error => {
+			console.log(error)
+			alert(error.message)
+		})
 
   };
 
